@@ -23,7 +23,10 @@ score =- penalty;      // ต้องการ: score -= penalty
 
 console.log(score);
 
-{/* Exercise03: Complete the Code */}
+{/* 
+    Exercise03: Complete the Code 
+    เติมโค้ดในช่อง ____ ให้ตัวแปร total คำนวณราคาสินค้าได้ถูกต้อง โดยใช้ compound assignment เท่านั้น (ห้ามเขียน total = total + ...)
+*/}
 let total = 0;
 let itemPrice = 250;
 let quantity = 3;
