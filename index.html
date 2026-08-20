@@ -11,21 +11,24 @@
     </h1>
 </body>
 <script>
-    {/*
+    // ระบบคำนวณและแสดงใบเสร็จสำหรับร้านกาแฟ
+    const STORE_NAME = "Coffee Corner"; // ชื่อร้านกาแฟ
+    const PRICE_PER_CUP = 45; // ราคาแก้วกาแฟ 1 แก้ว
+    const CUPS_PER_ORDER = 3; // จำนวนแก้วกาแฟที่สั่งใน 1 รอบการสั่ง (Order)
+    let totalPrice = PRICE_PER_CUP * CUPS_PER_ORDER; // ราคารวม
+    const DISCOUNT_RATE = 0.1; // ส่วนลด
 
-    Syntax Error: คือการที่ เราเขียน Syntax ผิด เช่น เยื้องผิด, วงเล็บไม่เข้าคู่, ลืม Semi-colon อะไรงี้
-    Type Error: คือการที่ประเภทของตัวแปรมีการใช้งานที่ผิด แบบประกาศเป็นตัวแปรปกติ แต่ ดันไปเรียกใช้แบบ function อะไรงี้
-    Reference Error: คือการที่ระบบขอเข้าถึงตัวแปรนั้นก่อนที่ตัวแปรนั้นจะถูก Assign ค่า (Hoist)
-    
-    */}
-    const PI = 3.14;
-    PI = 3.14159;              // เกิด Error เนื่องจากว่า ตัวแปร Const ไม่สามารถทำงาน re-assign ใหม่ได้
+    if (CUPS_PER_ORDER >= 3) {
+        totalPrice = totalPrice - (totalPrice * DISCOUNT_RATE); // ราคารวมหลังจากใช้ส่วนลด เมื่อลูกค้าสั่งกาแฟไม่น้อยกว่า 3 แก้ว
+    }
 
-    const person = { name: "Tom" };
-    person.name = "Jerry";     // ไม่เกิด Error
-    console.log(person.name);
+    const RECEIPT = STORE_NAME + ": " + totalPrice + " baht"; // Pattern การแสดงใบเสร็จ
+    console.log(RECEIPT); // แสดงใบเสร็จ และ ราคากาแฟรวมก่อนคิดภาษี (VAT)
 
-    let counter = 0;
-    counter = counter + 1;     // ไม่เกิด Error
+    const TAX_RATE = 0.07; // ค่าภาษี (VAT)
+    let finalPrice = totalPrice;
+    finalPrice = finalPrice + (finalPrice * TAX_RATE); // ราคาค่ากาแฟ หลังจากรวมค่าภาษีแล้ว
+
+    console.log(finalPrice); // แสดงราคาหลังรวม VAT แล้ว
 </script>
 </html>
