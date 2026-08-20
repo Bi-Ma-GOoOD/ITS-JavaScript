@@ -11,11 +11,21 @@
     </h1>
 </body>
 <script>
-    const MAX_SCORE = 100;
-    let ndPlace = 85;
-    let status = "done";
-    let user_name = "Alex";
+    {/*
 
-console.log(MAX_SCORE, ndPlace, flags, user_name);
+    Syntax Error: คือการที่ เราเขียน Syntax ผิด เช่น เยื้องผิด, วงเล็บไม่เข้าคู่, ลืม Semi-colon อะไรงี้
+    Type Error: คือการที่ประเภทของตัวแปรมีการใช้งานที่ผิด แบบประกาศเป็นตัวแปรปกติ แต่ ดันไปเรียกใช้แบบ function อะไรงี้
+    Reference Error: คือการที่ระบบขอเข้าถึงตัวแปรนั้นก่อนที่ตัวแปรนั้นจะถูก Assign ค่า (Hoist)
+    
+    */}
+    const PI = 3.14;
+    PI = 3.14159;              // เกิด Error เนื่องจากว่า ตัวแปร Const ไม่สามารถทำงาน re-assign ใหม่ได้
+
+    const person = { name: "Tom" };
+    person.name = "Jerry";     // ไม่เกิด Error
+    console.log(person.name);
+
+    let counter = 0;
+    counter = counter + 1;     // ไม่เกิด Error
 </script>
 </html>
