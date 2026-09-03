@@ -26,16 +26,17 @@ console.log(score);
 {/* 
     Exercise03: Complete the Code 
     เติมโค้ดในช่อง ____ ให้ตัวแปร total คำนวณราคาสินค้าได้ถูกต้อง โดยใช้ compound assignment เท่านั้น (ห้ามเขียน total = total + ...)
+    
+    let total = 0;
+    let itemPrice = 250;
+    let quantity = 3;
+    let discount = 50;
+    let taxRate = 0.07; // 7%
+    
+    total ____ itemPrice ____ quantity;  // เพิ่ม total ตามราคา x จำนวน
+    total ____ discount;                  // หักส่วนลด
+    let tax = total * taxRate;
+    total ____ tax;                       // บวกภาษี
+    
+    console.log(total);
 */}
-let total = 0;
-let itemPrice = 250;
-let quantity = 3;
-let discount = 50;
-let taxRate = 0.07; // 7%
-
-total ____ itemPrice ____ quantity;  // เพิ่ม total ตามราคา x จำนวน
-total ____ discount;                  // หักส่วนลด
-let tax = total * taxRate;
-total ____ tax;                       // บวกภาษี
-
-console.log(total);
