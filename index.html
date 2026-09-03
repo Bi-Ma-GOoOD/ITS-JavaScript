@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITS-JavaScript</title>
+    <script>
+        console.log("A: in head");
+    </script>
 </head>
 <body>
-    <!-- A - Inline script -->
-    <button onclick="console.log('Clicked')">Click</button>
-
-    <!-- B - Internal script -->
     <script>
-        let x = 5;
-        console.log(x);
+        console.log("B: top of body");
+    </script>
+    
+    <p>Some content</p>
+
+    <script>
+        console.log("C: bottom of body");
     </script>
 </body>
-<!-- C - External script (Best Practice) -->
-<script src="./scripts.js"></script>
 </html>

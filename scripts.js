@@ -1,1 +1,1 @@
-console.log("Hello from external script.");
+console.log("This is an external script!");
