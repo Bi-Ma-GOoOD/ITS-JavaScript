@@ -1,28 +1,11 @@
-function openMyFile() {
-    console.log("Open my file.");
-}
-
-function writeMyFile(data) {
-    if (!data){
-        throw new Error("Reference type error.");
-    }
-    console.log(`Write "${data}" into the file.`);
-}
-
-function handleError(error){
-    console.error(`Error: ${error}`);
-}
-
-function closeMyFile(){
-    console.log("Close my file.");
-}
-
 try {
-    openMyFile();
-    let theData = "Akrapon Phlayyai";
-    writeMyFile(theData); // This may throw an error
-} catch (e) {
-    handleError(e); // If an error occurred, handle it
+    console.log("A");
+    let result = notDefinedVariable + 1;
+    console.log("B");
+} catch (error) {
+    console.log("C: " + error.name);
+    console.log("C: " + error.message);
 } finally {
-    closeMyFile(); // Always close the resource
+    console.log("D");
 }
+console.log("E");
