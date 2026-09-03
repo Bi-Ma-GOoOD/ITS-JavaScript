@@ -4,19 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITS-JavaScript</title>
-    <script>
-        console.log("A: in head");
-    </script>
 </head>
 <body>
     <script>
-        console.log("B: top of body");
+        let sharedValue = "Hello from different script <tag>";
     </script>
-    
-    <p>Some content</p>
-
+    <p>Test</p>
     <script>
-        console.log("C: bottom of body");
+        console.log(sharedValue);
     </script>
 </body>
 </html>
