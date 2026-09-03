@@ -6,12 +6,19 @@
     <title>ITS-JavaScript</title>
 </head>
 <body>
-    <script>
-        let sharedValue = "Hello from different script <tag>";
-    </script>
-    <p>Test</p>
-    <script>
-        console.log(sharedValue);
-    </script>
+    <h3>Situation A: defer</h3>
+    <p>
+        script ที่ต้องรอให้ HTML ทั้งหน้า parse เสร็จก่อน 
+        และต้องรันตามลำดับกับ script อื่น (เช่น ต้องพึ่งพา DOM element ที่อยู่ท้ายหน้า)
+    </p>
+    <h3>Situation B: async</h3>
+    <p>
+        script วิเคราะห์ (analytics) ที่ไม่สนใจ DOM เลย 
+        และไม่แคร์ลำดับการรันกับ script อื่น อยากให้โหลดเร็วที่สุด
+    </p>
+    <h3>Situation C: ไม่ต้องใส่อะไรเลย</h3>
+    <p>
+        script เล็กๆ ที่วางไว้ท้ายสุดของ 'body' อยู่แล้ว (หลัง content ทั้งหมด)
+    </p>
 </body>
 </html>
