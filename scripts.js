@@ -1,20 +1,23 @@
-function processData(input) {
-    try {
-        try {
-            if (typeof input !== "number") {
-                throw new TypeError("Input must be a number");
-            }
-            console.log("Inner: valid number " + input);
-        } catch (innerErr) {
-            console.log("Inner catch: " + innerErr.name); // Inner catch: TypeError
-            throw new Error("Re-thrown from inner");
-        }
-    } catch (outerErr) {
-        console.log("1-Outer catch: " + outerErr.name); // outer catch: Re-thrown from inner
-        console.log("2-Outer catch: " + outerErr.message); // outer catch: Re-thrown from inner
-    } finally {
-        console.log("Cleanup done"); // cleanup done
+class ValidationError extends Error {
+    constructor(message) {
+        super(message);
+        this.name = "ValidationError";
     }
 }
 
-processData("hello");
+function registerUser(username) {
+    if (username.length < 3) {
+        throw new ValidationError("Username too short");
+    }
+    console.log("User registered: " + username);
+}
+
+try {
+    registerUser("ab");
+} catch (err) {
+    if (err instanceof ValidationError) {
+        console.error("Validation failed: " + err.message);
+    } else {
+        console.error("Unknown error: " + err.message);
+    }
+}
