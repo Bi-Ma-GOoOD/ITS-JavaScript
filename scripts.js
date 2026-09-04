@@ -1,13 +1,12 @@
-function divide(a, b) {
-    if (b === 0) {
-        throw new Error("Don't divide by zero.");
+function parseData() {
+    try {
+        let data = JSON.parse("invalid json");
+        console.log(data);
+    } catch (err) {
+        return null;
+    } finally {
+        console.log("เสร็จสิ้น");
     }
-    return a / b;
 }
 
-try {
-    let result = divide(10, 0);
-    console.log(result);
-} catch (err) {
-    console.error(`${err.name}: ${err.message}`);
-}
+parseData();
