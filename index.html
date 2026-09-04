@@ -6,7 +6,10 @@
     <title>ITS-JavaScript</title>
 </head>
 <body>
-    <p>Hello World</p>
+    <div id="host">Host Location: </div>
+    <script>
+        document.getElementById("host").innerHTML += location.pathname;
+    </script>
     <script defer src="./scripts.js"></script>
 </body>
 </html>
