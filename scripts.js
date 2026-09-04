@@ -1,12 +1,20 @@
-function parseData() {
+function processData(input) {
     try {
-        let data = JSON.parse("invalid json");
-        console.log(data);
-    } catch (err) {
-        return null;
+        try {
+            if (typeof input !== "number") {
+                throw new TypeError("Input must be a number");
+            }
+            console.log("Inner: valid number " + input);
+        } catch (innerErr) {
+            console.log("Inner catch: " + innerErr.name); // Inner catch: TypeError
+            throw new Error("Re-thrown from inner");
+        }
+    } catch (outerErr) {
+        console.log("1-Outer catch: " + outerErr.name); // outer catch: Re-thrown from inner
+        console.log("2-Outer catch: " + outerErr.message); // outer catch: Re-thrown from inner
     } finally {
-        console.log("เสร็จสิ้น");
+        console.log("Cleanup done"); // cleanup done
     }
 }
 
-parseData();
+processData("hello");
