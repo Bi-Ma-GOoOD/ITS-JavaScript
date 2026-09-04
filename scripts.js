@@ -1,11 +1,13 @@
-try {
-    console.log("A");
-    let result = notDefinedVariable + 1;
-    console.log("B");
-} catch (error) {
-    console.log("C: " + error.name);
-    console.log("C: " + error.message);
-} finally {
-    console.log("D");
+function divide(a, b) {
+    if (b === 0) {
+        throw new Error("Don't divide by zero.");
+    }
+    return a / b;
 }
-console.log("E");
+
+try {
+    let result = divide(10, 0);
+    console.log(result);
+} catch (err) {
+    console.error(`${err.name}: ${err.message}`);
+}
