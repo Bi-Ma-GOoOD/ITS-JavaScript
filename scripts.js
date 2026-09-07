@@ -1,9 +1,17 @@
-let userConfirmed = confirm("ต้องการดำเนินการต่อหรือไม่?");
-console.log(userConfirmed);
+// เก็บ URL ปัจจุบันไว้ในตัวแปร currentUrl
+let currentUrl = location.href;
+console.log(currentUrl);
 
-if (userConfirmed) {
-    // location.href = "thankyou.html";
-    location.assign('./thankyou.html');
+// ถามชื่อผู้ใช้ ถ้าไม่กรอกอะไรเลย (null หรือ string ว่าง) ให้แสดง alert เตือน
+let userName = prompt("กรุณากรอกชื่อของคุณ:");
+
+if (userName === null || userName === "") {
+    alert("คุณยังไม่ได้กรอกชื่อ!");
 } else {
-    location.assign('https://youtu.be/XRVQKihyACM?si=ru7S8Dkg-EmdVNfS'); // อันนี้ผมทำเล่นๆ นะคับ
+    console.log(`Input: ${userName}`);
 }
+
+// หน่วงเวลา 3 วินาที แล้วค่อยแสดงข้อความ "หมดเวลา!"
+setTimeout(() => {
+    console.log("หมดเวลา!");
+}, 3000);
