@@ -1,23 +1,7 @@
-class ValidationError extends Error {
-    constructor(message) {
-        super(message);
-        this.name = "ValidationError";
-    }
-}
+var greeting = "Hello";
+let farewell = "Bye";
 
-function registerUser(username) {
-    if (username.length < 3) {
-        throw new ValidationError("Username too short");
-    }
-    console.log("User registered: " + username);
-}
-
-try {
-    registerUser("ab");
-} catch (err) {
-    if (err instanceof ValidationError) {
-        console.error("Validation failed: " + err.message);
-    } else {
-        console.error("Unknown error: " + err.message);
-    }
-}
+console.log(window.greeting); // Hello
+console.log(window.farewell); // undefined
+console.log(typeof window.greeting); // string
+console.log(typeof window.farewell); // undefined
