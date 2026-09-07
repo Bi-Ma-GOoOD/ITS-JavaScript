@@ -1,5 +1,4 @@
-console.log(screen.width); // Screen Object
-location.reload(); // Location Object
-console.log(navigator.language); // Navigator Object
-window.open("https://example.com"); // Window Object
-history.go(-1); // History Object
+let a = confirm("ยืนยันการลบ?");     // user กดปุ่ม "Cancel" -> false
+let b = prompt("กรอกอายุ:");          // user กดปุ่ม "Cancel" โดยไม่พิมพ์อะไร -> null
+let c = prompt("กรอกชื่อ:");          // user พิมพ์ "Tom" แล้วกด OK -> String
+let d = alert("บันทึกสำเร็จ");        // user กดปุ่ม OK -> undefined
