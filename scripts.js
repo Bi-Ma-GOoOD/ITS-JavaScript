@@ -1,5 +1,9 @@
 "use strict";
 
-console.log((5).toFixed(2)); // "5.00"
-console.log((1234567).toLocaleString()); // "1,234,567"
-console.log((0.000123).toPrecision(2)); // "1.2e-4" (incorrect) => 0.00012
+function isValidNumber(input) {
+    return input !== "" && !Number.isNaN(Number(input));
+}
+
+console.log(isValidNumber("123"));   // ควรได้ true
+console.log(isValidNumber("abc"));   // ควรได้ false
+console.log(isValidNumber(""));      // ควรได้ false (แต่โค้ดปัจจุบันให้ true!)
