@@ -1,9 +1,7 @@
 "use strict";
 
-function isValidNumber(input) {
-    return input !== "" && !Number.isNaN(Number(input));
-}
-
-console.log(isValidNumber("123"));   // ควรได้ true
-console.log(isValidNumber("abc"));   // ควรได้ false
-console.log(isValidNumber(""));      // ควรได้ false (แต่โค้ดปัจจุบันให้ true!)
+console.log(typeof Symbol()); // "symbol"
+console.log(typeof Symbol("hello").description); // "string"
+console.log(typeof 42n); // "bigint"
+console.log(typeof []); // "object"
+console.log(typeof function(){}); // "function"
