@@ -1,9 +1,6 @@
 "use strict";
 
-console.log(Number("   ")); // 0
-console.log(Number("0x1F")); // 31 => [F * 1 pow(16, 0) = 15, 1 * 16 pow(16, 1) = 16 => 15 + 16 = 31]
-console.log(Number(true)); // 1
-console.log(Number(false)); // 0
-console.log(Number([])); // 0
-console.log(Number([5])); // 5
-console.log(Number([1, 2])); // NaN
+console.log((123.456).toPrecision(4)); // (expo: 2 < pre: 4) 123.5
+console.log((123.456).toPrecision(2)); // (expo: 2 === pre: 2) 1.2e+2
+console.log((0.0005).toPrecision(1)); // (expo: -4 > -6) 0.0005
+console.log((100).toPrecision(2)); // (expo: 2 === pre: 2) 1.0e+2
