@@ -1,9 +1,5 @@
 "use strict";
 
-console.log(parseInt("42px")); // 42
-console.log(parseFloat("3.14abc")); // 3.14
-console.log(Number("  123  ")); // NaN (incorrect) => 123
-console.log(Number("")); // NaN (incorrect) => 0
-console.log(Number("abc")); // NaN
-console.log(Number(null)); // null (incorrect) => 0
-console.log(Number(undefined)); // NaN
+console.log((5).toFixed(2)); // "5.00"
+console.log((1234567).toLocaleString()); // "1,234,567"
+console.log((0.000123).toPrecision(2)); // "1.2e-4" (incorrect) => 0.00012
