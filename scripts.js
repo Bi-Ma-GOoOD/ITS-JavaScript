@@ -1,14 +1,9 @@
 "use strict";
 
-console.log(typeof 42); // "number"
-console.log(typeof "hello"); // "string"
-console.log(typeof true); // "boolean"
-console.log(typeof undefined); // "undefined"
-console.log(typeof null); // "object"
-console.log(typeof Symbol("id")); // "string" (Incorrect) -> "symbol"
-console.log(typeof NaN); // "number"
-
-// Addition
-let sym = Symbol("id");
-console.log(typeof sym);
-console.log(sym.description);
+console.log(parseInt("42px")); // 42
+console.log(parseFloat("3.14abc")); // 3.14
+console.log(Number("  123  ")); // NaN (incorrect) => 123
+console.log(Number("")); // NaN (incorrect) => 0
+console.log(Number("abc")); // NaN
+console.log(Number(null)); // null (incorrect) => 0
+console.log(Number(undefined)); // NaN
