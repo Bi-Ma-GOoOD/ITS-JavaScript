@@ -1,6 +1,15 @@
 "use strict";
 
-console.log((123.456).toPrecision(4)); // (expo: 2 < pre: 4) 123.5
-console.log((123.456).toPrecision(2)); // (expo: 2 === pre: 2) 1.2e+2
-console.log((0.0005).toPrecision(1)); // (expo: -4 > -6) 0.0005
-console.log((100).toPrecision(2)); // (expo: 2 === pre: 2) 1.0e+2
+function isStrictlyNaN(value) {
+    // เติมโค้ดตรงนี้
+    // console.log(`typeof ${value}: ${typeof value}`);
+    if (typeof value === "number"){
+        return Number.isNaN(value);
+    }
+    return false;
+}
+
+console.log(isStrictlyNaN(NaN));        // true
+console.log(isStrictlyNaN("hello"));    // false (ต่างจาก isNaN("hello") ที่จะได้ true!)
+console.log(isStrictlyNaN(undefined));  // false (ต่างจาก isNaN(undefined) ที่จะได้ true!)
+console.log(isStrictlyNaN(5));          // false
