@@ -1,20 +1,16 @@
-"use strict";
+// Exercise 1 — Multi-dimensional Array & Access
+const matrix = [
+    [1, 2, 3],
+    [4, 5, [6, 7]],
+    [8, 9]
+];
 
-function countSelected(selectObject) {
-    let numberSelected = 0;
-    for (let i = 0; i < selectObject.options.length; i++) {
-        if(selectObject.options[i].selected) {
-            numberSelected++;
-        }
-    }
-    return numberSelected;
-}
+// เขียน expression เพื่อเข้าถึงค่าต่างๆ ใน matrix
+// ค่า 5
+console.log(matrix[1][1]);
 
-const btn = document.getElementById("btn");
+// ค่า 7
+console.log(matrix[1][2][1]);
 
-btn.addEventListener("click", () => {
-    const musicTypes = document.n_selectForm.musicTypes_id;
-    console.log(musicTypes);
-    alert(`You have selected ${countSelected(musicTypes)} option(s).`);
-    console.log(`You have selected ${countSelected(musicTypes)} option(s).`);
-})
+// ค่า 9
+console.log(matrix[2][1]);
