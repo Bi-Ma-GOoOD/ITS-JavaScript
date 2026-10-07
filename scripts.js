@@ -1,6 +1,22 @@
-// Exercise 3 — Sorting
-console.log([10, 1, 21, 2].sort()); // Array (4) [1, 10, 2, 21]
+// Exercise 4 — Debug the Code (Initialization + Iteration)
+function squareArray(n) {
+    let result = new Array(n).fill(0);
+    console.log(result);
+    for (let i = 0; i < n; i++) {
+        result[i] = i * i;
+    }
+    return result;
+}
 
-console.log([10, 1, 21, 2].sort((a, b) => a - b)); // Array (4) [1, 2, 10, 21]
+console.log(squareArray(5));
 
-console.log(["banana", "Apple", "cherry"].sort()); // Array (3) ["Apple", "banana", "cherry"]
+// Learning hasOwnProperty method
+const object = {};
+object.foo = 42;
+object.bar = 43;
+console.log(object);
+console.log(object.hasOwnProperty("foo"));
+
+const arr = new Array(3);
+console.log(arr);
+console.log(arr.hasOwnProperty(1));
