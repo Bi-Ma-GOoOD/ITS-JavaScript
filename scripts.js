@@ -1,16 +1,13 @@
-// Exercise 1 — Multi-dimensional Array & Access
-const matrix = [
-    [1, 2, 3],
-    [4, 5, [6, 7]],
-    [8, 9]
-];
+// Exercise 2 — Predict the Output (push/pop/shift/unshift + length)
+let arr = [10, 20, 30];
 
-// เขียน expression เพื่อเข้าถึงค่าต่างๆ ใน matrix
-// ค่า 5
-console.log(matrix[1][1]);
+arr.push(40); // ไม่มีตัวแปรเก็บค่า แต่ว่าผลลัพธ์ที่ได้จากบรรทัดนี้คือ 4 -> [10, 20, 30, 40]
+arr.unshift(0); // ไม่มีตัวแปรเก็บค่า แต่ว่าผลลัพธ์ที่ได้จากบรรทัดนี้คือ 5 -> [0, 10, 20, 30, 40]
+let removed = arr.pop(); // 40 -> [0, 10, 20, 30]
+arr.shift(); // ไม่มีตัวแปรเก็บค่า แต่ว่าผลลัพธ์ที่ได้จากบรรทัดนี้คือ 0 -> [10, 20, 30]
 
-// ค่า 7
-console.log(matrix[1][2][1]);
+let len = arr.length; // 3
 
-// ค่า 9
-console.log(matrix[2][1]);
+console.log(arr); // Array (3) [10, 20, 30]
+console.log(removed); // 40
+console.log(len); // 3
