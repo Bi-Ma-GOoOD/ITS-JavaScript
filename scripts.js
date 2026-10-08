@@ -1,22 +1,37 @@
-// Exercise 4 — Debug the Code (Initialization + Iteration)
-function squareArray(n) {
-    let result = new Array(n).fill(0);
-    console.log(result);
-    for (let i = 0; i < n; i++) {
-        result[i] = i * i;
+// Exercise 5 — Searching + Mini Logic
+function findFirstLargest(arr){
+    let first_largest = -99;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > first_largest) {
+            first_largest = arr[i];
+        }
     }
-    return result;
+
+    return first_largest;
 }
 
-console.log(squareArray(5));
+function findSecondLargest(arr) {
+    const first_largest = findFirstLargest(arr);
+    let largest_value = false;
+    let second_largest = -99;
 
-// Learning hasOwnProperty method
-const object = {};
-object.foo = 42;
-object.bar = 43;
-console.log(object);
-console.log(object.hasOwnProperty("foo"));
+    for (let i = 0; i < arr.length; i++){
+        if(arr[i] != first_largest){
+            if (arr[i] > second_largest){
+                second_largest = arr[i];
+            }
+        }
+    }
 
-const arr = new Array(3);
-console.log(arr);
-console.log(arr.hasOwnProperty(1));
+    return (second_largest == -99) ? first_largest : second_largest;
+}
+
+const arr_test = [[1, 2, 3, 4], [3, 7, 2, 9, 4], [5, 5, 5], [18, 17, 19], [17, 16], [17, 18, 10, 7, 2026], [9, 8, 7]];
+
+let x = 0
+
+while (x < arr_test.length) {
+    console.log(findSecondLargest(arr_test[x])); // 3, 7, 5, 18, 16, 18, 8
+    x++;
+}
