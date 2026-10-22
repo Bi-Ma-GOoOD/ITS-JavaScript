@@ -1,14 +1,19 @@
 "use strict";
 
-// Exercise03 - ดึงส่วนต่างๆ ของ Date
-const d = new Date(2026, 11, 25, 18, 30, 45); //2026-12-25T18:30:45.000 GMT+7
+// Exercise04 - Debug adding and subtracting date
+function addDays(date, days) {
+    const result = new Date(date);
+    result.setDate(result.getDate() + days);
+    return result;
+}
 
-console.log(d);
-console.log(d.getFullYear());   // 2026
-console.log(d.getMonth());      // 11
-console.log(d.getDate());       // 25
-console.log(d.getDay());        // 5
-console.log(d.getHours());      // 18
+function daysBetween(a, b) {
+    return (b.valueOf() - a.valueOf()) / (1000 * 60 * 60 * 24);
+}
 
-console.log(new Date(2026, 12, 1).getFullYear());   // 2027
-console.log(new Date(2026, 12, 1).getMonth());      // 0
+const start = new Date(2026, 0, 31); // Sat Jan 31 2026 00:00:00 GMT+0700 (Indochina Time)
+const deadline = addDays(start, 30); // Mon Mar 02 2026 00:00:00 GMT+0700 (Indochina Time)
+
+console.log(start.toLocaleDateString("en-GB")); // 31/01/2026
+console.log(deadline.toLocaleDateString("en-GB")); // 02/03/2026
+console.log(daysBetween(start, deadline)); // 30
