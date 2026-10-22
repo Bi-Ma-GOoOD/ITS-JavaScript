@@ -1,25 +1,19 @@
-// Exercise 5 — Searching + Mini Logic
-function findSecondLargest(arr) {
-    let first_largest = -Infinity;
-    let second_largest = -Infinity;
+"use strict";
 
-    for (const x of arr){
-        if (x > first_largest){
-            second_largest = first_largest;
-            first_largest = x;
-        }else if (x < first_largest && x > second_largest){
-            second_largest = x;
-        }
+// Exercise 01 - Methods and this
+const counter = {
+    count: 0,
+    increment() {
+        this.count++;
+        return this;
+    },
+    getCount() {
+        return this.count;
     }
+};
 
-    return (second_largest === -Infinity) ? first_largest : second_largest;
-}
+counter.increment().increment().increment();
+console.log(counter.getCount());   // 3
 
-const arr_test = [[1, 2, 3, 4], [3, 7, 2, 9, 4], [5, 5, 5], [18, 17, 19], [17, 16], [17, 18, 10, 7, 2026], [9, 8, 7], [-200, -99]];
-
-let x = 0
-
-while (x < arr_test.length) {
-    console.log(findSecondLargest(arr_test[x])); // 3, 7, 5, 18, 16, 18, 8
-    x++;
-}
+const fn = counter.getCount;
+console.log(fn());                 // TypeError: Cannot read properties of undefined (reading 'count')
