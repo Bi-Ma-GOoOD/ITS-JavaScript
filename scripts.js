@@ -1,25 +1,14 @@
 "use strict";
 
-// Exercise02 - Instantiation and Properties
-class Book {
-    constructor(title, pages) {
-        this.title = title;
-        this.pages = pages;
-    }
+// Exercise03 - ดึงส่วนต่างๆ ของ Date
+const d = new Date(2026, 11, 25, 18, 30, 45); //2026-12-25T18:30:45.000 GMT+7
 
-    describe() {
-        return `${this.title} (${this.pages} pages)`;
-    }
-}
+console.log(d);
+console.log(d.getFullYear());   // 2026
+console.log(d.getMonth());      // 11
+console.log(d.getDate());       // 25
+console.log(d.getDay());        // 5
+console.log(d.getHours());      // 18
 
-const b1 = new Book("JS Basics", 200);
-const b2 = new Book("DOM Guide", 150);
-
-b1.author = "Tom";
-delete b2.pages;
-
-console.log(b1.describe()); // JS Basics (200 pages)
-console.log(b2.describe()); // DOM Guide (undefined pages)
-console.log("author" in b2); // false
-console.log(b1.hasOwnProperty("describe")); // false
-console.log(Object.keys(b1)); // ['title', 'pages', 'author']
+console.log(new Date(2026, 12, 1).getFullYear());   // 2027
+console.log(new Date(2026, 12, 1).getMonth());      // 0
