@@ -12,7 +12,7 @@
 |:bulb: เฉลยแบบทดสอบท้ายบทเรียน|แนวทางคำตอบสำหรับโจทย์ที่ใช้ตรวจสอบความเข้าใจของแต่ละหัวข้อย่อย|
 |:zap: เฉลยแบบทดสอบสำหรับ Mini - Project|แนวทางคำตอบสำหรับโจทย์ที่ใช้ตรวจสอบความเข้าใจของ Mini - Project|
 ## :hammer: เครื่องมือ :carpentry_saw:
-:ping_pong: [กลับไปที่สารบัญ]()<br>
+:ping_pong: [กลับไปที่สารบัญ](#clipboard-lists-of-content-relieved)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;เครื่องมือที่ใช้ในการศึกษาเนื้อหา JavaScript นั้นมีการใช้เครื่องมือทั้งสิ้น 1 เครื่องมือ! นั่นคือ
 * [Visual Studio Code](https://code.visualstudio.com/download)
     >&nbsp;&nbsp;&nbsp;&nbsp;ถ้าหากผู้อ่านยังไม่มีเครื่องมือตัวนี้ ผู้อ่านสามารถคลิกที่ชื่อ [Visual Studio Code](https://code.visualstudio.com/download) ต่อจากนั้นมี 2 ขั้นตอนสำหรับการตั้งค่า เพื่อให้สามารถรัน JavaScript บนเครื่องของผู้อ่านได้ ได้แก่ 
@@ -21,7 +21,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;เมื่อจบ 2 ขั้นตอนข้างต้นแล้ว ตอนนี้ผู้อ่านสามารถกดคีย์ลัด `Ctrl+Shift+I` สำหรับเปิด JavaScript Console เพื่อรันคำสั่งต่างๆ<br>
     &nbsp;&nbsp;&nbsp;&nbsp;ทดสอบคำสั่งเริ่มต้น `console.log("Hello, World!");`
 ## :information_source: แหล่งข้อมูล :butter:
-:ping_pong: [กลับไปที่สารบัญ]()<br>
+:ping_pong: [กลับไปที่สารบัญ](#clipboard-lists-of-content-relieved)<br>
 &nbsp;&nbsp;&nbsp;&nbsp;แหล่งข้อมูลหลักที่ใช้ในการศึกษาภาษา JavaScript ส่วนมากจะมาจาก 1 ช่องทางหลัก ได้แก่
 1. [เอกสารทางการของภาษา JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
     > :thinking: **<font color="#FFF2A7">กรณีศึกษาเพิ่มเติม</font>** <br>
