@@ -1,25 +1,15 @@
-// Exercise 5 — Searching + Mini Logic
-function findSecondLargest(arr) {
-    let first_largest = -Infinity;
-    let second_largest = -Infinity;
+"use strict";
 
-    for (const x of arr){
-        if (x > first_largest){
-            second_largest = first_largest;
-            first_largest = x;
-        }else if (x < first_largest && x > second_largest){
-            second_largest = x;
-        }
-    }
+// Exercise 5: Localization (MM/DD vs DD/MM)
+const date = new Date(2026, 9, 5);   // 5 ตุลาคม 2026
 
-    return (second_largest === -Infinity) ? first_largest : second_largest;
-}
+console.log(date.toLocaleDateString("en-US"));    // a) "10/5/2026"
+console.log(date.toLocaleDateString("en-GB"));    // b) "05/10/2026"
 
-const arr_test = [[1, 2, 3, 4], [3, 7, 2, 9, 4], [5, 5, 5], [18, 17, 19], [17, 16], [17, 18, 10, 7, 2026], [9, 8, 7], [-200, -99]];
+console.log(date.toLocaleDateString("en-US", {
+    month: "2-digit", day: "2-digit", year: "numeric"
+}));                                             // c) "10/05/2026"
 
-let x = 0
-
-while (x < arr_test.length) {
-    console.log(findSecondLargest(arr_test[x])); // 3, 7, 5, 18, 16, 18, 8
-    x++;
-}
+console.log(date.toLocaleDateString("en-US", {
+    weekday: "long", day: "numeric", month: "long", year: "numeric"
+}));                                             // d) "Monday, October 5, 2026"
