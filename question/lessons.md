@@ -18,6 +18,7 @@
 ## :heavy_plus_sign: Domain 1: JavaScript Operators, Methods, and Keywords :old_key:
 
 ### :mag: 1.1 Complete and debug code that uses assignment and arithmetic operators
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Predict the Output**
 
@@ -74,6 +75,7 @@ console.log(total);
 ```
 
 ### :goat: 1.2 Apply JavaScript best practices
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Find the Bugs (Naming และ Keywords)**
 
@@ -140,6 +142,7 @@ console.log(finalPrice);
 **คำใบ้:** ไล่หาทีละตัวแปรว่ามีบรรทัดไหนเขียนทับค่าเดิมหรือไม่ (มีเครื่องหมาย `=` เกิดขึ้นอีกครั้งหลังประกาศครั้งแรก โดยไม่ใช่ `==` หรือ `===`)
 
 ### :white_check_mark: 1.3 Evaluate the use of internal and external scripts
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Identify the Type**
 
@@ -221,6 +224,7 @@ console.log(finalPrice);
 ```
 
 ### :spider_web: 1.4 Implement exception handling
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Predict the Output**
 
@@ -333,6 +337,7 @@ try {
 **คำใบ้:** `instanceof` ใช้เช็คว่า object ถูกสร้างมาจาก class ไหน เช่น `err instanceof Error` เป็น `true` เสมอถ้า `err` เป็น error object เพราะทุก error สืบทอดมาจาก `Error`
 
 ### :cookie: 1.5 Complete and debug code that interacts with the Browser Object Model (BOM)
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Identify the BOM Object**
 
@@ -409,6 +414,7 @@ console.log(typeof window.farewell);
 ## :floppy_disk: Domain 2: Variables, Data Types, and Functions :smiley:
 
 ### :chicken: 2.1 Declare and use variables of primitive data types
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Identify the Type**
 
@@ -471,6 +477,7 @@ console.log(isValidNumber(""));      // ควรได้ false (แต่โ�
 ```
 
 ### :fleur_de_lis: 2.2 Declare and use arrays
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Multi-dimensional Array และการเข้าถึง**
 
@@ -547,6 +554,7 @@ console.log(findSecondLargest([5, 5, 5]));         // ควรได้ 5 (ถ�
 ```
 
 ### :ticket: 2.3 Complete and debug code that uses objects
+:peacock: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 **Exercise 1: Methods และ this**
 

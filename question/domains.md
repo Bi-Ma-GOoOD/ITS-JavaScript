@@ -3,12 +3,13 @@
 &nbsp;&nbsp;&nbsp;&nbsp; ไฟล์นี้คือการรวบรวมโจทย์สำหรับการสร้างโปรแกรมขนาดเล็ก (Mini - Project) โดยวัตถุประสงค์ของการสร้างโปรแกรมขนาดเล็ก คือการทำให้ผู้เรียนได้มีความเข้าใจในความหมายโดยรวมของ Domain นั้นๆ ได้อย่างเข้าใจมากยิ่งขึ้น และสามารถนำความรู้ที่มีมาประยุกต์ใช้ในการสร้างโปรแกรมต่างๆ เพื่อช่วยแก้ไขปัญหาในโลกความจริง ด้วยความรู้ที่ได้รับมา
 ## :point_up: วิธีทำโจทย์ :thinking:
 &nbsp;&nbsp;&nbsp;&nbsp;เขียนโปรแกรมให้ถูกต้องและเป็นไปตามข้อกำหนด (Requirements) ที่ได้รับมาให้ครบ หรือ ตามศักยภาพของตนเองที่จะสามารถทำได้ จากนั้นให้ทำการรันโค้ดจริง เพื่อทดลองการทำงานของโปรแกรมว่ามีการทำงานที่ถูกต้องตามข้อกำหนดที่ระบุเอาไว้หรือไม่ ถ้ามีจุดใดที่ไม่ถูกต้องหรือผิด ก็ให้ทำการแก้ไขจนกว่าจะครบหรือคิดว่าถูกต้อง<br>
-&nbsp;&nbsp;&nbsp;&nbsp;โดยวิธีการตรวจสอบว่าโปรแกรมที่ตนเองเขียนนั้นถูกต้องหรือไม่ คือการสังเกตข้อกำหนดที่ตนเองได้รับมาว่าตนเองเขียนตามข้อกำหนดครบทุกข้อแล้วหรือยัง จากนั้นให้นำโค้ดโปรแกรม พร้อมกับข้อกำหนดต่างๆ ไปตรวจสอบด้วย AI chatbot อย่างเช่น Claude, GPT, etc. เพื่อได้รับการแนะนำเพิ่มเติม ที่จะสามารถนำไปปรับใช้ในอนาคตได้
+&nbsp;&nbsp;&nbsp;&nbsp;โดยวิธีการตรวจสอบว่าโปรแกรมที่ตนเองเขียนนั้นถูกต้องหรือไม่ คือการสังเกตข้อกำหนดที่ตนเองได้รับมาว่าตนเองเขียนตามข้อกำหนดครบทุกข้อแล้วหรือยัง จากนั้นให้นำโค้ดโปรแกรม พร้อมกับข้อกำหนดต่างๆ ไปตรวจสอบด้วย AI chatbot อย่างเช่น Claude, GPT, etc. เพื่อให้ได้รับการแนะนำเพิ่มเติม ที่จะสามารถนำไปปรับใช้ในอนาคตได้
 ## :large_orange_diamond: สารบัญ :corn:
 * :heavy_plus_sign: [Domain 1: JavaScript Operators, Methods, and Keywords](#heavy_plus_sign-domain-1-javascript-operators-methods-and-keywords-old_key)
 * :floppy_disk: [Domain 2: Variables, Data Types, and Functions](#floppy_disk-domain-2-variables-data-types-and-functions-smiley)
 
 ## :heavy_plus_sign: Domain 1: JavaScript Operators, Methods, and Keywords :old_key:
+:chicken: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 ### Mini-Project: ระบบคำนวณใบเสร็จร้านกาแฟ (Coffee Shop Receipt System)
 
@@ -38,4 +39,5 @@
 ราคารวม: [ราคาหลังหักส่วนลดและภาษี] บาท
 ```
 ## :floppy_disk: Domain 2: Variables, Data Types, and Functions :smiley:
+:chicken: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br><br>
 ยังไม่มีครับ :sob::pray::wilted_flower: เนื่องจาก Domain ที่ 2 พึ่งเรียนจบหัวข้อย่อยที่ 2.3 - Complete and debug code that uses objects
