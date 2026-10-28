@@ -18,10 +18,17 @@
 &nbsp;&nbsp;&nbsp;&nbsp;เครื่องมือที่ใช้ในการศึกษาเนื้อหา JavaScript นั้นมีการใช้เครื่องมือทั้งสิ้น 1 เครื่องมือ! นั่นคือ
 * [Visual Studio Code](https://code.visualstudio.com/download)<br>
     <br>
-    >&nbsp;&nbsp;&nbsp;&nbsp;ถ้าหากผู้อ่านยังไม่มีเครื่องมือตัวนี้ ผู้อ่านสามารถคลิกที่ชื่อ [Visual Studio Code](https://code.visualstudio.com/download) ต่อจากนั้นมี 2 ขั้นตอนสำหรับการตั้งค่า เพื่อให้สามารถรัน JavaScript บนเครื่องของผู้อ่านได้ ได้แก่ 
-    > 1. ติดตั้ง Extension (หรือกดคีย์ลัด `Ctrl+Shift+X` สำหรับ Windows) และในช่องค้นหาให้พิมพ์คำว่า **Live Server** จากนั้นกดปุ่ม Install
-    > 2. เมื่อติดตั้ง Extension สำเร็จแล้วให้ผู้อ่าน เปิดโปรแกรม Visual Stdio Code และเปิดใหม่อีกครั้ง จากนั้นให้คลิกขวาของไฟล์ที่ชื่อว่า [index.html](/index.html) จากนั้นให้เลือกตัวเลือกที่ชื่อว่า **Open with Live Server** ต่อจากนั้นเมื่อสังเกตด้านขวาล่างของหน้าจอจะพบข้อความ Server is Started at port: port_number และ Visual Studio Code จะเปิดหน้าต่างบราวเซอร์มาให้ <br><br>
-    &nbsp;&nbsp;&nbsp;&nbsp;เมื่อจบ 2 ขั้นตอนข้างต้นแล้ว ตอนนี้ผู้อ่านสามารถกดคีย์ลัด `Ctrl+Shift+I` สำหรับเปิด JavaScript Console เพื่อรันคำสั่งต่างๆ ทดสอบคำสั่งเริ่มต้น `console.log("Hello, World!");`
+    >&nbsp;&nbsp;&nbsp;&nbsp;ถ้าหากผู้อ่านยังไม่มีเครื่องมือตัวนี้ ผู้อ่านสามารถคลิกที่ชื่อ [Visual Studio Code](https://code.visualstudio.com/download) ต่อจากนั้นให้ผู้อ่านติดตั้ง [git-bash](https://git-scm.com/install/windows) เพื่อใช้งาน git control โดยคลิปสอนการติดตั้งสามารถกดเข้าที่ลิงก์ด้านล่างนี้<br>
+    >  * :arrow_forward: [How Install Visual Studio Code on Windows 11 (VS Code)](https://youtu.be/cu_ykIfBprI?si=2hWSMzPqeBDgdndn) 
+    > * :arrow_forward: [How to install Git on Windows 11 (Updated 2025)](https://youtu.be/t2-l3WvWvqg?si=0eGpRFnpHI3LNDFV)
+    > <br><br>ต่อจากนั้นมี 4 ขั้นตอนสำหรับการตั้งค่า เพื่อให้สามารถรัน JavaScript บนเครื่องของผู้อ่านได้ ได้แก่
+    > 1. เปิด Git Bash application จากนั้นทำการตั้งค่าชื่อ และอีเมล เพื่อเข้าใช้งาน Git โดยคำสั่งในการ Config username & email มีดังนี้
+    >       - พิมพ์คำสั่งนี้ เปลี่ยนชื่อ username ให้ตรงกับบัญชี github ของตนเอง <br>`$ git config --global user.name "John Doe"` ต่อจากนั้นกดปุ่ม Enter
+    >       - พิมพ์คำสั่งนี้ เปลี่ยนบัญชี email ให้ตรงกับบัญชี github ของตนเอง <br>`$ git config --global user.email johndoe@example.com` ต่อจากนั้นกดปุ่ม Enter
+    > 1. เลือกโฟลเดอร์บนเครื่องคอมพิวเตอร์ที่ต้องการจะดาวน์โหลด Repository ต่อจากนั้นให้กดคลิกขวาที่ touchpad / mouse ณ บริเวณพื้นที่ว่าง กด Show more options และเลือก Open Git Bash here ใส่คำสั่ง <br>`$ git clone "https://github.com/Bi-Ma-GOoOD/ITS-JavaScript.git"` ตามด้วยกดปุ่ม Enter เพื่อทำการดาวน์โหลด Repository ลงบนเครื่อง
+    > 1. เปิดโปรแกรม Visual Studio Code และเลือกเปิดโฟลเดอร์ Repository ที่ได้ทำการติดตั้งในขั้นตอนที่ 2 ต่อจากนั้นให้ทำการติดตั้ง Extension (หรือกดคีย์ลัด `Ctrl+Shift+X` สำหรับ Windows) และในช่องค้นหาให้พิมพ์คำว่า **Live Server** จากนั้นกดปุ่ม Install
+    > 1. เมื่อติดตั้ง Extension สำเร็จแล้วให้ผู้อ่านปิดโปรแกรม Visual Stdio Code และเปิดใหม่อีกครั้ง จากนั้นให้คลิกขวาของไฟล์ที่ชื่อว่า [index.html](/index.html) จากนั้นให้เลือกตัวเลือกที่ชื่อว่า **Open with Live Server** ต่อจากนั้นเมื่อสังเกตด้านขวาล่างของหน้าจอจะพบข้อความ Server is Started at port: port_number และ Visual Studio Code จะเปิดหน้าต่างบราวเซอร์มาให้ <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;เมื่อจบ 4 ขั้นตอนข้างต้นแล้ว ตอนนี้ผู้อ่านสามารถกดคีย์ลัด `Ctrl+Shift+I` ในบราวเซอร์สำหรับเปิด JavaScript Console เพื่อรันคำสั่งต่างๆ ทดสอบคำสั่งเริ่มต้น `console.log("Hello, World!");`
 
 ## :information_source: แหล่งข้อมูล :butter:
 :ping_pong: [กลับไปที่สารบัญ](#clipboard-lists-of-content-relieved)<br><br>

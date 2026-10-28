@@ -9,6 +9,7 @@
 * :floppy_disk: [Domain 2: Variables, Data Types, and Functions](#floppy_disk-domain-2-variables-data-types-and-functions-smiley)
 
 ## :heavy_plus_sign: Domain 1: JavaScript Operators, Methods, and Keywords :old_key:
+:crystal_ball: [กลับไปที่สารบัญ](#large_orange_diamond-สารบัญ-corn)<br>
 
 ### Mini-Project: ระบบคำนวณใบเสร็จร้านกาแฟ (Coffee Shop Receipt System)
 
