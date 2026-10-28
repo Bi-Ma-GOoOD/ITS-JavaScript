@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ITS-JavaScript</title>
 </head>
-<body>
-    <div id="customer_name">Customer name: </div>
-    <div id="quantity">Quantity: </div>
-    <div id="total_cost">Total cost: </div>
-    <p>หน้านี้จะถูกรีเซ็ตในอีก 10 วินาที และกระบวนการสั่งกาแฟจะเริ่มต้นใหม่</p>
+<body style="background-color:slategray;">
+    <div id="loc_href" style="color:wheat;">Location href: </div>
+    <script>
+        document.getElementById("loc_href").innerHTML += window.location.href;
+    </script>
     <script defer src="./scripts.js"></script>
 </body>
 </html>
