@@ -41,7 +41,7 @@
 ## :notebook_with_decorative_cover: สมุด :pencil2:
 :ping_pong: [กลับไปที่สารบัญ](#clipboard-lists-of-content-relieved)<br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;สมุดเป็นหนึ่งในวิธีที่ผู้เขียนใช้ในการจดข้อมูลต่างๆ ระหว่างการเรียนรู้จากเอกสารทางการอย่าง [JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript) เช่นหลักการที่ภาษา javaScript ใช้หรือแนวคิดในการออกแบบการทำงาน โดยสิ่งที่สมุดเล่มนี้พยายามจะเน้นคือการสร้าง และ เพิ่มความเข้าใจเพิ่มเติมจากสิ่งที่เอกสารทางการต้องการจะนำเสนอ หรือก็คือการแปลงข้อมูลในเชิงวิชาการ ให้กลายเป็นข้อมูลที่สามารถอ่านแล้วเข้าใจได้ง่ายขึ้น โดยผู้อ่านสามารถเข้าถึงเนื้อหาในสมุด และสามารถแก้ไข หรือต่อยอดเพิ่มเติมได้จากลิงก์ด้านล่างนี้
-* [ITS - JavaScript notebook](https://itittraining.sharepoint.com/:b:/s/InStructorBK/IQBCipd36cdoTbTuJCkYtkyEAW2OJmaiXS5s-eKtFYtEstc?e=uBWln5)
+* [ITS - JavaScript notebook](https://itittraining.sharepoint.com/:b:/s/InStructorBK/IQBCipd36cdoTbTuJCkYtkyEAW2OJmaiXS5s-eKtFYtEstc?e=6T6aIN)
 
 ## :question: แบบทดสอบท้ายบทเรียน :alien:
 :ping_pong: [กลับไปที่สารบัญ](#clipboard-lists-of-content-relieved)<br><br>
