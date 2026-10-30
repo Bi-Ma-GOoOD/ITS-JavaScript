@@ -1,77 +1,106 @@
-// เลือกระดับความยาก -> return จำนวนครั้งที่ทายได้
-function chooseMaxAttempts() {
-  const level = prompt("เลือกระดับ: 1 = ง่าย (10 ครั้ง), 2 = ปกติ (7 ครั้ง), 3 = ยาก (5 ครั้ง)");
+// ===== 4.4 ค้นหา element =====
+const taskInput = document.getElementById("taskInput");
+const addBtn = document.getElementById("addBtn");
+const taskList = document.querySelector("#taskList");
+const counter = document.getElementById("counter");
+const clearBtn = document.getElementById("clearBtn");
 
-  // 3.2 switch ต้องมี break และ default
-  switch (level) {
-    case "1":
-      return 10;
-    case "2":
-      return 7;
-    case "3":
-      return 5;
-    default:
-      return 7; // กรอกอย่างอื่น/กด Cancel ใช้ระดับปกติ
+let taskCount = 0; // ใช้สร้าง data-id ไม่ซ้ำกัน
+
+// ===== 4.1 แสดงโครงสร้าง DOM tree (เรียกซ้ำ) =====
+function printDomTree(node, depth) {
+  console.log("  ".repeat(depth) + node.tagName.toLowerCase() + (node.id ? "#" + node.id : ""));
+  for (const child of node.children) {
+    printDomTree(child, depth + 1);
   }
 }
 
-function playGame() {
-  const maxAttempts = chooseMaxAttempts();
-  const secret = Math.floor(Math.random() * 100) + 1; // สุ่ม 1-100
-  const guesses = [];       // เก็บประวัติการทาย
-  let attempts = 0;
-  let isCorrect = false;
-
-  // 3.3 while + 3.1 logical operators (&& และ !)
-  while (attempts < maxAttempts && !isCorrect) {
-    const input = prompt(`ครั้งที่ ${attempts + 1}/${maxAttempts}: ทายเลข 1-100 (กด Cancel เพื่อยอมแพ้)`);
-
-    // กด Cancel -> prompt คืนค่า null
-    if (input === null) {
-      alert("ยอมแพ้แล้วหรือ? เฉลยคือ " + secret);
-      break; // ออกจาก while ทันที
-    }
-
-    const guess = Number(input);
-
-    // 3.1 ตรวจ input ด้วย || (ผิดข้อใดข้อหนึ่งก็ถือว่าไม่ถูกต้อง)
-    if (input.trim() === "" || isNaN(guess) || !Number.isInteger(guess) || guess < 1 || guess > 100) {
-      alert("กรุณากรอกจำนวนเต็มระหว่าง 1 ถึง 100");
-      continue; // ข้ามไปรอบถัดไป โดยไม่นับเป็นการทาย
-    }
-
-    attempts++;
-    guesses.push(guess);
-
-    // 3.2 if / else if / else
-    if (guess === secret) {
-      isCorrect = true;
-    } else if (guess > secret) {
-      alert(Math.abs(guess - secret) <= 5 ? "มากไปนิดเดียว ใกล้มากแล้ว!" : "มากไป!");
-    } else {
-      alert(Math.abs(guess - secret) <= 5 ? "น้อยไปนิดเดียว ใกล้มากแล้ว!" : "น้อยไป!");
-    }
-  }
-
-  // 3.2 ternary operator
-  const result = isCorrect ? "ชนะ" : "แพ้";
-
-  alert(`ผล: ${result}\nเลขลับ: ${secret}\nทายทั้งหมด: ${attempts} ครั้ง`);
-
-  // 3.3 for loop แสดงประวัติการทาย
-  console.log("===== สรุปผลเกม =====");
-  console.log(`ผล: ${result}`);
-  console.log(`เลขลับ: ${secret}`);
-  console.log(`ทายทั้งหมด: ${attempts} ครั้ง`);
-
-  let history = "";
-  for (let i = 0; i < guesses.length; i++) {
-    history += `\nครั้งที่ ${i + 1}: ${guesses[i]}`;
-  }
-  console.log("ประวัติการทาย: " + history);
+// ===== อัปเดตตัวนับ =====
+function updateCounter() {
+  const total = taskList.children.length;
+  const done = document.querySelectorAll("#taskList li.done").length;
+  counter.textContent = `ทั้งหมด ${total} | เสร็จแล้ว ${done}`; // 4.3 textContent
 }
 
-// 3.3 do...while: เล่นอย่างน้อย 1 รอบเสมอ แล้วค่อยถามว่าเล่นต่อไหม
-do {
-  playGame();
-} while (confirm("เล่นอีกรอบหรือไม่?"));
+// ===== 4.4 สร้างและเพิ่ม element =====
+function addTask() {
+  const text = taskInput.value.trim();
+
+  if (text === "") {
+    taskInput.classList.add("error");
+    taskInput.setAttribute("placeholder", "กรุณาพิมพ์ชื่องานก่อน!");
+    return;
+  }
+
+  taskInput.classList.remove("error");
+  taskInput.setAttribute("placeholder", "พิมพ์งานที่ต้องทำ");
+  taskCount++;
+
+  const li = document.createElement("li");
+  li.setAttribute("data-id", taskCount);
+
+  const span = document.createElement("span");
+  span.textContent = text;
+
+  const delBtn = document.createElement("button");
+  delBtn.textContent = "ลบ";
+  delBtn.classList.add("delete-btn");
+
+  li.appendChild(span);
+  li.appendChild(delBtn);
+  taskList.appendChild(li);
+
+  taskInput.value = "";
+  taskInput.focus();
+  updateCounter();
+}
+
+// ===== 4.2 + 4.5 Events =====
+
+// 4.2 document event: รอให้ DOM โหลดเสร็จ
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("DOM tree ของ <ul>:");
+  printDomTree(taskList, 0);
+  console.log("parent ของ ul คือ:", taskList.parentNode.tagName); // BODY
+  updateCounter();
+});
+
+// 4.5 addEventListener: mouse event
+addBtn.addEventListener("click", addTask);
+
+// 4.2 keyboard event: กด Enter ในช่อง input
+taskInput.addEventListener("keydown", function (event) {
+  if (event.key === "Enter") {
+    addTask();
+  }
+});
+
+// Event delegation: ผูก listener ที่ <ul> ตัวเดียว ครอบคลุม <li> ที่สร้างใหม่ทุกอัน
+taskList.addEventListener("click", function (event) {
+  if (event.target.classList.contains("delete-btn")) {
+    event.target.parentNode.remove(); // ลบ <li>
+  } else if (event.target.tagName === "SPAN") {
+    event.target.parentNode.classList.toggle("done");
+  }
+  updateCounter();
+});
+
+// mouseover/mouseout เกิดซ้ำตอนเมาส์เคลื่อนผ่านลูก จึงใช้ closest("li") หา <li> ที่ครอบอยู่
+taskList.addEventListener("mouseover", function (event) {
+  const li = event.target.closest("li");
+  if (li) li.classList.add("highlight");
+});
+
+taskList.addEventListener("mouseout", function (event) {
+  const li = event.target.closest("li");
+  if (li) li.classList.remove("highlight");
+});
+
+// 4.5 event handler property (ผูกได้แค่ handler เดียวต่อ event)
+clearBtn.onclick = function () {
+  if (taskList.children.length === 0) return;
+  if (confirm("ต้องการล้างงานทั้งหมดหรือไม่?")) {
+    taskList.innerHTML = ""; // 4.3 innerHTML: ล้างลูกทั้งหมด
+    updateCounter();
+  }
+};
