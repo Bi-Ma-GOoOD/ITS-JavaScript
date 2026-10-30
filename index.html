@@ -1,15 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITS-JavaScript</title>
+  <meta charset="UTF-8">
+  <title>ITS-JavaScript</title>
 </head>
-<body style="background-color:slategray;">
-    <div id="loc_href" style="color:wheat;">Location href: </div>
-    <script>
-        document.getElementById("loc_href").innerHTML += window.location.href;
-    </script>
-    <script defer src="./scripts.js"></script>
+<body  style="text-align: center;">
+    <div style="margin-top: 100px; margin-bottom: 10px;">
+        เปิด Dev Tools ด้วย ปุ่ม F12 หรือกดคีย์ลัด Ctrl+Shift+I เพื่อเปิด Console Log
+    </div>
+    <div>
+      <img src="./asset/Dog Smile GIF.gif" alt="What the dogs doing here?" style="width:480px;height:480px;">
+    </div>
+    <div id="handshake"></div>
+
+  <!-- วาง script ไว้ท้าย body เพื่อให้ HTML โหลดเสร็จก่อน -->
+  <script defer src="./scripts.js"></script>
 </body>
 </html>
