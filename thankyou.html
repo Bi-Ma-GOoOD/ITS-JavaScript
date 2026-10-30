@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITS-JavaScript</title>
+  <meta charset="UTF-8">
+  <title>ขอบคุณที่สมัครเรียน</title>
 </head>
 <body>
-    <h1>Good job..Brossssss!!!</h1>
+  <h1>ขอบคุณที่สมัครเรียน!</h1>
+  <p>ชื่อ: <span id="out-fullname"></span></p>
+  <p>อีเมล: <span id="out-email"></span></p>
+  <p>อายุ: <span id="out-age"></span></p>
+  <p>เพศ: <span id="out-gender"></span></p>
+  <p>คอร์ส: <span id="out-course"></span></p>
+  <a href="index.html">กลับไปหน้าสมัคร</a>
+
+  <script>
+    // อ่านค่าจาก query string เช่น ?fullname=...&email=...
+    const params = new URLSearchParams(window.location.search);
+
+    // ไม่ดึง password มาแสดง
+    const keys = ["fullname", "email", "age", "gender", "course"];
+    for (const key of keys) {
+      // ใช้ textContent (ไม่ใช่ innerHTML) กันโค้ดแปลกปลอมที่ผู้ใช้พิมพ์มา
+      document.getElementById("out-" + key).textContent = params.get(key);
+    }
+  </script>
 </body>
 </html>

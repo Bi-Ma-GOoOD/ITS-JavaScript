@@ -1,106 +1,108 @@
-// ===== 4.4 ค้นหา element =====
-const taskInput = document.getElementById("taskInput");
-const addBtn = document.getElementById("addBtn");
-const taskList = document.querySelector("#taskList");
-const counter = document.getElementById("counter");
-const clearBtn = document.getElementById("clearBtn");
+const form = document.getElementById("regForm");
 
-let taskCount = 0; // ใช้สร้าง data-id ไม่ซ้ำกัน
+// ===== 5.1 กำหนดค่าให้ฟอร์ม =====
+// ตั้งค่าเริ่มต้นเมื่อโหลดหน้า
+form.elements["course"].value = "HTML";
 
-// ===== 4.1 แสดงโครงสร้าง DOM tree (เรียกซ้ำ) =====
-function printDomTree(node, depth) {
-  console.log("  ".repeat(depth) + node.tagName.toLowerCase() + (node.id ? "#" + node.id : ""));
-  for (const child of node.children) {
-    printDomTree(child, depth + 1);
-  }
+// ปุ่มกรอกตัวอย่าง: set ค่าให้ทุกชนิดของช่อง
+document.getElementById("fillBtn").addEventListener("click", function () {
+    clearErrors();
+    form.elements["fullname"].value = "สมชาย ใจดี";
+    form.elements["email"].value = "somchai@email.com";
+    form.elements["age"].value = 25;
+    form.elements["password"].value = "Abcd1234";
+    form.elements["confirm"].value = "Abcd1234";
+    document.getElementById("male").checked = true;       // radio
+    form.elements["course"].value = "JavaScript";         // select
+    document.getElementById("agree").checked = true;      // checkbox
+});
+
+// ===== ฟังก์ชันช่วยจัดการข้อความ error =====
+function showError(field, message) {
+    document.getElementById("err-" + field).textContent = message;
+    const input = document.getElementById(field);
+    if (input) input.classList.add("invalid");
 }
 
-// ===== อัปเดตตัวนับ =====
-function updateCounter() {
-  const total = taskList.children.length;
-  const done = document.querySelectorAll("#taskList li.done").length;
-  counter.textContent = `ทั้งหมด ${total} | เสร็จแล้ว ${done}`; // 4.3 textContent
+function clearErrors() {
+    const messages = document.querySelectorAll(".error-msg");
+    for (const m of messages) {
+        m.textContent = "";
+    }
+    const inputs = document.querySelectorAll(".invalid");
+    for (const i of inputs) {
+        i.classList.remove("invalid");
+    }
 }
 
-// ===== 4.4 สร้างและเพิ่ม element =====
-function addTask() {
-  const text = taskInput.value.trim();
+// ===== 5.2 Validation: return true ถ้าข้อมูลถูกต้องทั้งหมด =====
+function validateForm() {
+    clearErrors();
+    let isValid = true;
 
-  if (text === "") {
-    taskInput.classList.add("error");
-    taskInput.setAttribute("placeholder", "กรุณาพิมพ์ชื่องานก่อน!");
-    return;
-  }
+    // 5.1 อ่านค่าจากช่อง
+    const fullname = form.elements["fullname"].value.trim();
+    const email = form.elements["email"].value.trim();
+    const ageText = form.elements["age"].value;
+    const password = form.elements["password"].value;
+    const confirm = form.elements["confirm"].value;
+    // radio: หาตัวที่ถูกเลือก (ถ้าไม่มีจะได้ null)
+    const gender = document.querySelector('input[name="gender"]:checked');
+    const agree = form.elements["agree"].checked;
 
-  taskInput.classList.remove("error");
-  taskInput.setAttribute("placeholder", "พิมพ์งานที่ต้องทำ");
-  taskCount++;
+    if (fullname === "") {
+        showError("fullname", "กรุณากรอกชื่อ-นามสกุล");
+        isValid = false;
+    } else if (fullname.length < 3) {
+        showError("fullname", "ชื่อต้องยาวอย่างน้อย 3 ตัวอักษร");
+        isValid = false;
+    }
 
-  const li = document.createElement("li");
-  li.setAttribute("data-id", taskCount);
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        showError("email", "รูปแบบอีเมลไม่ถูกต้อง");
+        isValid = false;
+    }
 
-  const span = document.createElement("span");
-  span.textContent = text;
+    const age = Number(ageText);
+    if (ageText === "" || isNaN(age) || age < 15 || age > 60) {
+        showError("age", "อายุต้องเป็นตัวเลข 15-60");
+        isValid = false;
+    }
 
-  const delBtn = document.createElement("button");
-  delBtn.textContent = "ลบ";
-  delBtn.classList.add("delete-btn");
+    if (password.length < 8 || !/[A-Z]/.test(password) || !/[0-9]/.test(password)) {
+        showError("password", "รหัสผ่านต้องมีอย่างน้อย 8 ตัว มีตัวพิมพ์ใหญ่และตัวเลข");
+        isValid = false;
+    }
 
-  li.appendChild(span);
-  li.appendChild(delBtn);
-  taskList.appendChild(li);
+    if (confirm !== password || confirm === "") {
+        showError("confirm", "รหัสผ่านไม่ตรงกัน");
+        isValid = false;
+    }
 
-  taskInput.value = "";
-  taskInput.focus();
-  updateCounter();
-}
+    if (gender === null) {
+        showError("gender", "กรุณาเลือกเพศ");
+        isValid = false;
+    }
 
-// ===== 4.2 + 4.5 Events =====
+    if (!agree) {
+        showError("agree", "กรุณายอมรับเงื่อนไข");
+        isValid = false;
+    }
 
-// 4.2 document event: รอให้ DOM โหลดเสร็จ
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM tree ของ <ul>:");
-  printDomTree(taskList, 0);
-  console.log("parent ของ ul คือ:", taskList.parentNode.tagName); // BODY
-  updateCounter();
+    return isValid;
+    }
+
+    // ===== 5.3 ควบคุมการ Submit =====
+    form.addEventListener("submit", function (event) {
+    event.preventDefault(); // หยุดการส่งแบบอัตโนมัติไว้ก่อน
+
+    if (validateForm()) {
+        // form.submit() ไม่ trigger event "submit" ซ้ำ จึงไม่วนลูป
+        // ผลคือ browser ไปที่ thankyou.html?fullname=...&email=...&...
+        form.submit();
+    }
 });
 
-// 4.5 addEventListener: mouse event
-addBtn.addEventListener("click", addTask);
-
-// 4.2 keyboard event: กด Enter ในช่อง input
-taskInput.addEventListener("keydown", function (event) {
-  if (event.key === "Enter") {
-    addTask();
-  }
-});
-
-// Event delegation: ผูก listener ที่ <ul> ตัวเดียว ครอบคลุม <li> ที่สร้างใหม่ทุกอัน
-taskList.addEventListener("click", function (event) {
-  if (event.target.classList.contains("delete-btn")) {
-    event.target.parentNode.remove(); // ลบ <li>
-  } else if (event.target.tagName === "SPAN") {
-    event.target.parentNode.classList.toggle("done");
-  }
-  updateCounter();
-});
-
-// mouseover/mouseout เกิดซ้ำตอนเมาส์เคลื่อนผ่านลูก จึงใช้ closest("li") หา <li> ที่ครอบอยู่
-taskList.addEventListener("mouseover", function (event) {
-  const li = event.target.closest("li");
-  if (li) li.classList.add("highlight");
-});
-
-taskList.addEventListener("mouseout", function (event) {
-  const li = event.target.closest("li");
-  if (li) li.classList.remove("highlight");
-});
-
-// 4.5 event handler property (ผูกได้แค่ handler เดียวต่อ event)
-clearBtn.onclick = function () {
-  if (taskList.children.length === 0) return;
-  if (confirm("ต้องการล้างงานทั้งหมดหรือไม่?")) {
-    taskList.innerHTML = ""; // 4.3 innerHTML: ล้างลูกทั้งหมด
-    updateCounter();
-  }
-};
+// ปุ่ม Reset ล้างค่าในช่องอัตโนมัติอยู่แล้ว แต่ข้อความ error เราต้องล้างเอง
+document.getElementById("resetBtn").addEventListener("click", clearErrors);

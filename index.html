@@ -2,34 +2,78 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8">
-  <title>Domain 4 - To-Do List</title>
+  <title>Domain 5 - Registration Form</title>
   <style>
-    body { font-family: sans-serif; max-width: 480px; margin: 40px auto; }
-    li { padding: 6px; list-style: none; display: flex; justify-content: space-between; }
-    li span { cursor: pointer; }
-    .done { text-decoration: line-through; color: gray; }
-    .highlight { background: #fff3b0; }
-    .error { border: 2px solid red; }
+    body { font-family: sans-serif; max-width: 420px; margin: 40px auto; }
+    .field { margin-bottom: 12px; }
+    label { display: block; font-weight: bold; }
+    .error-msg { color: red; font-size: 0.85em; }
+    input.invalid, select.invalid { border: 2px solid red; }
   </style>
 </head>
 <body>
-  <h1 id="title">รายการสิ่งที่ต้องทำ</h1>
+  <h1>สมัครเรียน JavaScript</h1>
 
-  <div>
-    <input type="text" id="taskInput" placeholder="พิมพ์งานที่ต้องทำ">
-    <button id="addBtn">เพิ่ม</button>
-  </div>
+  <!-- 5.3 action = ปลายทาง, method = วิธีส่ง, name = ชื่อ key ที่จะถูกส่งไป -->
+  <form id="regForm" action="thankyou.html" method="get" novalidate>
 
-  <p id="counter"></p>
-  <ul id="taskList"></ul>
-  <button id="clearBtn">ล้างทั้งหมด</button>
+    <div class="field">
+      <label for="fullname">ชื่อ-นามสกุล</label>
+      <input type="text" id="fullname" name="fullname">
+      <br><span class="error-msg" id="err-fullname"></span>
+    </div>
 
-  <footer>
-    <!-- 4.3 document.write ต้องรันระหว่างโหลดหน้า (ห้ามเรียกหลังโหลดเสร็จ ไม่งั้นหน้าจะถูกลบ) -->
-    <script>
-      document.write("<small>© " + new Date().getFullYear() + " My To-Do App</small>");
-    </script>
-  </footer>
+    <div class="field">
+      <label for="email">อีเมล</label>
+      <input type="email" id="email" name="email">
+      <br><span class="error-msg" id="err-email"></span>
+    </div>
+
+    <div class="field">
+      <label for="age">อายุ</label>
+      <input type="number" id="age" name="age">
+      <br><span class="error-msg" id="err-age"></span>
+    </div>
+
+    <div class="field">
+      <label for="password">รหัสผ่าน</label>
+      <input type="password" id="password" name="password">
+      <br><span class="error-msg" id="err-password"></span>
+    </div>
+
+    <div class="field">
+      <label for="confirm">ยืนยันรหัสผ่าน</label>
+      <input type="password" id="confirm" name="confirm">
+      <br><span class="error-msg" id="err-confirm"></span>
+    </div>
+
+    <div class="field">
+      <label>เพศ</label>
+      <!-- radio ที่อยู่กลุ่มเดียวกันต้องใช้ name เดียวกัน -->
+      <input type="radio" name="gender" value="ชาย" id="male"><label for="male" style="display:inline">ชาย</label>
+      <input type="radio" name="gender" value="หญิง" id="female"><label for="female" style="display:inline">หญิง</label>
+      <br><span class="error-msg" id="err-gender"></span>
+    </div>
+
+    <div class="field">
+      <label for="course">คอร์ส</label>
+      <select id="course" name="course">
+        <option value="HTML">HTML</option>
+        <option value="CSS">CSS</option>
+        <option value="JavaScript">JavaScript</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <input type="checkbox" id="agree" name="agree" value="yes">
+      <label for="agree" style="display:inline">ยอมรับเงื่อนไขการสมัคร</label>
+      <br><span class="error-msg" id="err-agree"></span>
+    </div>
+
+    <button type="submit">สมัครเรียน</button>
+    <button type="reset" id="resetBtn">ล้างข้อมูล</button>
+    <button type="button" id="fillBtn">กรอกตัวอย่าง</button>
+  </form>
 
   <script defer src="./scripts.js"></script>
 </body>
